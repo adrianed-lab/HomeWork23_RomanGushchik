@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var passwordTextField: UITextField!
@@ -59,6 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate {
     
     func setPassword() {
+        let keychain = KeychainSwift()
         guard let viewController = window?.rootViewController
             else {
             return
@@ -76,6 +78,7 @@ extension SceneDelegate {
                 return
             }
             UserDefaults.standard.set(password, forKey: "SavePassword")
+            keychain.set(password, forKey: "SavePassword")
         }
         let cancelButton = UIAlertAction(title: "Cancel", style: .destructive)
         securityMessage.addAction(setPasswordButton)
