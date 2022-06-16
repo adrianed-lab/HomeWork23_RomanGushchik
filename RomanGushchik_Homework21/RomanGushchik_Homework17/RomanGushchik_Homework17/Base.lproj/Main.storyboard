@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TuF-KV-tRL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Catalog Browser-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="RomanGushchik_Homework17" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yBa-lm-eF5">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="6hD-An-zOK"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="SLa-Bd-HtC"/>
+                                </connections>
+                            </tableView>
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ATb-tU-Hez">
+                                <rect key="frame" x="0.0" y="119" width="414" height="743"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eYI-0a-ufP">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="20" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="NNw-g3-Clk"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2eb-AL-OAb"/>
+                                </connections>
+                            </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lAg-UA-hal">
+                                <rect key="frame" x="100" y="88" width="214" height="32"/>
+                                <segments>
+                                    <segment title="TableView"/>
+                                    <segment title="CollectionView"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ATb-tU-Hez" secondAttribute="trailing" id="4AI-gh-wJ6"/>
+                            <constraint firstItem="ATb-tU-Hez" firstAttribute="top" secondItem="lAg-UA-hal" secondAttribute="bottom" id="7i4-ih-rky"/>
+                            <constraint firstItem="yBa-lm-eF5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CmL-dX-BLL"/>
+                            <constraint firstItem="lAg-UA-hal" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Q80-iF-rEq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lAg-UA-hal" secondAttribute="trailing" constant="100" id="b2y-cd-PH3"/>
+                            <constraint firstItem="yBa-lm-eF5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e2u-qD-r2t"/>
+                            <constraint firstItem="lAg-UA-hal" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jNG-Ay-Vtu"/>
+                            <constraint firstAttribute="bottom" secondItem="yBa-lm-eF5" secondAttribute="bottom" id="k0u-cz-f1d"/>
+                            <constraint firstItem="yBa-lm-eF5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="mtd-dU-bHf"/>
+                            <constraint firstItem="ATb-tU-Hez" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ol2-N8-1xw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ATb-tU-Hez" secondAttribute="bottom" id="pMW-by-cT0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Catalog Browser" id="ljG-32-T7m">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" style="plain" id="pzi-Cz-nzs">
+                                <inset key="largeContentSizeImageInsets" minX="-1" minY="1" maxX="0.0" maxY="0.0"/>
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="yDw-vQ-DZS">
+                                    <rect key="frame" x="360" y="7" width="34" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <buttonConfiguration key="configuration" style="plain" imagePadding="0.0" buttonSize="mini">
+                                        <imageReference key="image" image="plus.app.fill" catalog="system" symbolScale="small"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="addObjectButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yaT-kh-JPI"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem title="Item" style="plain" id="Ga2-GQ-ALK">
+                                <inset key="largeContentSizeImageInsets" minX="-1" minY="1" maxX="0.0" maxY="0.0"/>
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3ut-TX-VBy">
+                                    <rect key="frame" x="317" y="7" width="35" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonConfiguration key="configuration" style="plain" buttonSize="mini">
+                                        <imageReference key="image" image="lock.open.fill" catalog="system" symbolScale="small"/>
+                                        <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="unlockSelectItems:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HgQ-kD-L6D"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                            <barButtonItem title="Item" style="plain" id="75L-Ft-epu">
+                                <inset key="largeContentSizeImageInsets" minX="-1" minY="1" maxX="0.0" maxY="0.0"/>
+                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ccf-fK-Gxe">
+                                    <rect key="frame" x="264" y="6.5" width="45" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <buttonConfiguration key="configuration" style="plain" buttonSize="mini">
+                                        <imageReference key="image" image="trash" catalog="system" symbolScale="small"/>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="regular"/>
+                                        <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="removeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZtF-8O-Eq5"/>
+                                    </connections>
+                                </button>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addObjectButton" destination="yDw-vQ-DZS" id="Cla-OC-YkZ"/>
+                        <outlet property="changeView" destination="lAg-UA-hal" id="VL9-Lu-dTG"/>
+                        <outlet property="myCollectionView" destination="ATb-tU-Hez" id="X3Z-XH-eBY"/>
+                        <outlet property="myTableView" destination="yBa-lm-eF5" id="FCb-7m-TME"/>
+                        <outlet property="removeButton" destination="ccf-fK-Gxe" id="fBI-4V-bRZ"/>
+                        <outlet property="unlockSelectItems" destination="3ut-TX-VBy" id="ZIH-FF-wfL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g7I-af-DIG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TuF-KV-tRL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g9V-kE-Vik">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hfk-wm-HmP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zLb-4N-yft" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lock.open.fill" catalog="system" width="128" height="112"/>
+        <image name="plus.app.fill" catalog="system" width="128" height="114"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
