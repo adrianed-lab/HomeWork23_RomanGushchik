@@ -15,6 +15,7 @@
 		84260CF3284BF0DF0095B06B /* ExtensionViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84260CF2284BF0DF0095B06B /* ExtensionViewController+TableView.swift */; };
 		84260CF5284BF10B0095B06B /* ExtensionViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84260CF4284BF10B0095B06B /* ExtensionViewController+CollectionView.swift */; };
 		84260CF7284BF12E0095B06B /* ExtensionViewController+ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84260CF6284BF12E0095B06B /* ExtensionViewController+ImagePicker.swift */; };
+		84448CFB285B5784004A82D6 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 84448CFA285B5784004A82D6 /* KeychainSwift */; };
 		846B210B283F227D00A54D86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B210A283F227D00A54D86 /* AppDelegate.swift */; };
 		846B210D283F227D00A54D86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B210C283F227D00A54D86 /* SceneDelegate.swift */; };
 		846B210F283F227D00A54D86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B210E283F227D00A54D86 /* ViewController.swift */; };
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84448CFB285B5784004A82D6 /* KeychainSwift in Frameworks */,
 				77E42DD0B2D4DBB31E36A7D4 /* Pods_RomanGushchik_Homework17.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +193,9 @@
 			dependencies = (
 			);
 			name = RomanGushchik_Homework17;
+			packageProductDependencies = (
+				84448CFA285B5784004A82D6 /* KeychainSwift */,
+			);
 			productName = RomanGushchik_Homework17;
 			productReference = 846B2107283F227D00A54D86 /* RomanGushchik_Homework17.app */;
 			productType = "com.apple.product-type.application";
@@ -219,6 +224,9 @@
 				Base,
 			);
 			mainGroup = 846B20FE283F227D00A54D86;
+			packageReferences = (
+				84448CF9285B5784004A82D6 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = 846B2108283F227D00A54D86 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -524,6 +532,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84448CF9285B5784004A82D6 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84448CFA285B5784004A82D6 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84448CF9285B5784004A82D6 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 846B20FF283F227D00A54D86 /* Project object */;
 }
