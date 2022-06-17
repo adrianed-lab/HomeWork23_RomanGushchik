@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var passwordTextField: UITextField!
     var checkPasswordTextField: UITextField!
     let keyChain = KeychainSwift()
+    let key = "SavePassword"
     var window: UIWindow?
 
 
@@ -77,7 +78,8 @@ extension SceneDelegate {
             else {
                 return
             }
-            self.keyChain.set(password, forKey: "SavePassword")
+            UserDefaults.standard.set(password, forKey: self.key)
+            self.keyChain.set(password, forKey: self.key)
         }
         let cancelButton = UIAlertAction(title: "Cancel", style: .destructive)
         securityMessage.addAction(setPasswordButton)
@@ -102,7 +104,7 @@ extension SceneDelegate {
             else {
                 return
             }
-            if self.keyChain.get("SavePassword") != enteredPassword {
+            if self.keyChain.get(self.key) != enteredPassword {
                 let wrongMessage = UIAlertController(title: "Error", message: "Password is wrong", preferredStyle: .alert)
                 let okButton = UIAlertAction(title: "Ok", style: .cancel) { _ in
                     self.checkPasswordTextField.text = ""
