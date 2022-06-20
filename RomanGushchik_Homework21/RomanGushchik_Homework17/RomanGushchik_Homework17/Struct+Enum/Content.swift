@@ -22,3 +22,6 @@ enum EditState {
     case navigation
     case selection
 }
+enum KeyValues: String {
+    case keyPassword = "SavePassword"
+}

@@ -10,9 +10,6 @@ import KeychainSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-let key = "SavePassword"
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -21,7 +18,7 @@ let key = "SavePassword"
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        if UserDefaults.standard.string(forKey: key) != nil {
+        if UserDefaults.standard.string(forKey: KeyValues.keyPassword.rawValue) != nil {
             } else {
                 let keyChain = KeychainSwift()
                     keyChain.clear()
@@ -37,4 +34,5 @@ let key = "SavePassword"
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 }
+
 
